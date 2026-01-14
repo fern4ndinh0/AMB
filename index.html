@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMB Atividades Aquáticas</title>
+    <link rel="icon" type="image/png" href="Dolphin White.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        
+        html { scroll-behavior: smooth; }
+        
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-700 antialiased bg-slate-50">
+
+    <nav class="fixed w-full z-50 bg-white shadow-md py-3">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                <img src="LOGOAMB.png" alt="Logo AMB" class="h-12 w-auto object-contain">
+                <span class="text-2xl font-bold tracking-tight text-blue-900">
+                    AMB<span class="text-blue-500"> Atividades Aquáticas</span>
+                </span>
+            </div>
+
+            <div class="hidden md:flex space-x-8 font-medium text-slate-600">
+                <a href="#sobre" class="hover:text-blue-500 transition-colors">Sobre</a>
+                <a href="#modalidades" class="hover:text-blue-500 transition-colors">Modalidades</a>
+                <a href="#beneficios" class="hover:text-blue-500 transition-colors">Benefícios</a>
+                <a href="#galeria" class="hover:text-blue-500 transition-colors">Galeria</a>
+                <a href="#contato" class="hover:text-blue-500 transition-colors">Contato</a>
+            </div>
+
+            <!-- Mobile Toggle Button -->
+            <button class="md:hidden text-slate-800" onclick="toggleMenu()">
+                <i data-lucide="menu" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-slate-100">
+            <div class="flex flex-col p-6 space-y-4">
+                <a href="#sobre" onclick="toggleMenu()" class="text-left text-slate-700 font-medium py-2 border-b border-slate-100">Sobre</a>
+                <a href="#modalidades" onclick="toggleMenu()" class="text-left text-slate-700 font-medium py-2 border-b border-slate-100">Modalidades</a>
+                <a href="#beneficios" onclick="toggleMenu()" class="text-left text-slate-700 font-medium py-2 border-b border-slate-100">Benefícios</a>
+                <a href="#galeria" onclick="toggleMenu()" class="text-left text-slate-700 font-medium py-2 border-b border-slate-100">Galeria</a>
+                <a href="#contato" onclick="toggleMenu()" class="w-full bg-blue-600 text-white py-3 rounded-lg font-bold mt-2 text-center block">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden pt-24">
+        <div class="absolute inset-0 z-0">
+            <img src="FundoAMB.png" alt="Piscina" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-800/40"></div>
+        </div>
+
+        <div class="relative z-10 container mx-auto px-6 text-center text-white fade-in-section">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+                Aprenda a nadar com <br/> <span class="text-blue-300">segurança e paixão</span>
+            </h1>
+            <p class="text-lg md:text-xl mb-10 text-white max-w-2xl mx-auto">
+                Das primeiras braçadas do seu filho ao seu treinamento de alta performance. Descubra o poder da água na sua vida e na de sua família.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#modalidades" class="px-8 py-4 bg-blue-500 hover:bg-blue-400 text-white rounded-full font-bold text-lg transition-all hover:shadow-lg shadow-blue-900/50">
+                    Conheça as Turmas
+                </a>
+            </div>
+        </div>
+
+        <!-- Wave -->
+        <div class="absolute bottom-0 w-full text-slate-50">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="w-full h-auto">
+                <path fill="currentColor" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <section id="sobre" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="lg:w-1/2 fade-in-section">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+                        <img src="AlexandreWater.png" alt="Sobre a escola" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 bg-blue-600 text-white px-6 py-4 rounded-tr-3xl">
+                            <p class="font-bold text-2xl">15+ Anos</p>
+                            <p class="text-sm opacity-90">de experiência</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 fade-in-section" style="transition-delay: 200ms;">
+                    <h3 class="text-blue-600 font-bold uppercase tracking-wide mb-2">Sobre a AMB</h3>
+                    <h2 class="text-4xl font-bold text-slate-900 mb-6">Mais que uma escola...</h2>
+                    <p class="text-slate-600 text-lg mb-6 leading-relaxed">
+                        Coordenada pelo Prof. Alexandre Mendes Bastos, a AMB é uma escola de natação e mergulho livre, tendo como seu diferencial a metodologia dinâmica e o acolhimento dos alunos. Acreditamos que a natação vai além da técnica: é sobre confiança, saúde e superação, e nós te ajudamos em cada um destes pontos.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-blue-100 p-3 rounded-full text-blue-600"><i data-lucide="award" class="w-6 h-6"></i></div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Metodologia Exclusiva</h4>
+                                <p class="text-slate-600 text-sm">Respeitamos o tempo de aprendizado de cada aluno.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-blue-100 p-3 rounded-full text-blue-600"><i data-lucide="users" class="w-6 h-6"></i></div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Professores Certificados</h4>
+                                <p class="text-slate-600 text-sm">Equipe de nadadores experientes e apaixonados pelo que fazem.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-blue-100 p-3 rounded-full text-blue-600"><i data-lucide="thermometer-sun" class="w-6 h-6"></i></div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Piscina de 25M Aquecida</h4>
+                                <p class="text-slate-600 text-sm">Mesmo em dias mais frios seu treino segue a 29°C.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="beneficios" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Quer motivos para começar a nadar?</h2>
+                <p class="text-slate-600">A natação é um esporte completo. Veja o que ela pode fazer por você.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="fade-in-section bg-slate-50 p-8 rounded-2xl text-center hover:shadow-xl transition-shadow border border-slate-100 h-full">
+                    <div class="mb-6 flex justify-center"><i data-lucide="heart" class="w-12 h-12 text-blue-500"></i></div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Saúde Cardiovascular</h3>
+                    <p class="text-slate-600 text-sm">Melhora a circulação e fortalece o coração.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="fade-in-section bg-slate-50 p-8 rounded-2xl text-center hover:shadow-xl transition-shadow border border-slate-100 h-full" style="transition-delay: 100ms;">
+                    <div class="mb-6 flex justify-center"><i data-lucide="dumbbell" class="w-12 h-12 text-blue-500"></i></div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Condicionamento</h3>
+                    <p class="text-slate-600 text-sm">Trabalha o corpo todo de forma equilibrada.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="fade-in-section bg-slate-50 p-8 rounded-2xl text-center hover:shadow-xl transition-shadow border border-slate-100 h-full" style="transition-delay: 200ms;">
+                    <div class="mb-6 flex justify-center"><i data-lucide="laugh" class="w-12 h-12 text-blue-500"></i></div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Redução de Stress</h3>
+                    <p class="text-slate-600 text-sm">Nadar libera endorfina, que promove a sensação de bem-estar.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="fade-in-section bg-slate-50 p-8 rounded-2xl text-center hover:shadow-xl transition-shadow border border-slate-100 h-full" style="transition-delay: 300ms;">
+                    <div class="mb-6 flex justify-center"><i data-lucide="hand-heart" class="w-12 h-12 text-blue-500"></i></div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Baixo Impacto</h3>
+                    <p class="text-slate-600 text-sm">A natação fortalece de maneira suave as articulações.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="modalidades" class="py-20 bg-blue-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <h3 class="text-blue-600 font-bold uppercase tracking-wide mb-2">Nossas Aulas</h3>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Encontre a turma perfeita</h2>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Class 1 -->
+                <div class="fade-in-section bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="infantil.png" alt="Natação Infantil" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-blue-800">Todos os níveis</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Natação Infantil</h3>
+                        <p class="text-sm text-blue-600 font-semibold mb-4 bg-blue-50 inline-block px-2 py-1 rounded">4 a 12 anos</p>
+                        <p class="text-slate-600 text-sm mb-6">Aprendizado dos quatro estilos, segurança aquática, disciplina e diversão.</p>
+                        <a href="#contato" class="block w-full py-3 border border-blue-500 text-blue-600 rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors text-center">Tenho Interesse</a>
+                    </div>
+                </div>
+                <!-- Class 2 -->
+                <div class="fade-in-section bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 group" style="transition-delay: 100ms;">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="nadador crawl.png" alt="Natação Adulto" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-blue-800">Iniciante ao Avançado</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Natação Adulto</h3>
+                        <p class="text-sm text-blue-600 font-semibold mb-4 bg-blue-50 inline-block px-2 py-1 rounded">A partir de 13 anos</p>
+                        <p class="text-slate-600 text-sm mb-6">Para quem quer aprender do zero, perder o medo ou aperfeiçoar a técnica.</p>
+                        <a href="#contato" class="block w-full py-3 border border-blue-500 text-blue-600 rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors text-center">Tenho Interesse</a>
+                    </div>
+                </div>
+                <!-- Class 3 -->
+                <div class="fade-in-section bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 group" style="transition-delay: 200ms;">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="competitivo.jpg" alt="Treinamento" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-blue-800">Competitivo</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Treinamento & Performance</h3>
+                        <p class="text-sm text-blue-600 font-semibold mb-4 bg-blue-50 inline-block px-2 py-1 rounded">Avançado</p>
+                        <p class="text-slate-600 text-sm mb-6">Foco em condicionamento físico de alto rendimento, técnica apurada e competições.</p>
+                        <a href="#contato" class="block w-full py-3 border border-blue-500 text-blue-600 rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors text-center">Tenho Interesse</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center md:hidden">
+                <button class="text-blue-600 font-bold hover:text-blue-700 flex items-center justify-center mx-auto gap-2">
+                    Ver grade de horários <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="py-20 bg-slate-900 text-white text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/brick-wall.png')] bg-fixed scroll-mt-28"></div>
+        <div class="container mx-auto px-6 relative z-10 fade-in-section">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">Venha fazer parte dessa história</h2>
+            <p class="text-xl text-blue-200 mb-10 max-w-3xl mx-auto">
+                Venha conhecer nosso espaço e colher os beneficios da natação em sua rotina.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <img src="children.png" alt="Aula" class="w-32 h-32 md:w-48 md:h-48 object-cover rounded-xl shadow-lg transform -rotate-3 hover:rotate-0 transition-transform">
+                <img src="adulto.png" alt="Piscina" class="w-32 h-32 md:w-48 md:h-48 object-cover rounded-xl shadow-lg transform rotate-2 hover:rotate-0 transition-transform">
+                <img src="Training.png" alt="Mergulho" class="w-32 h-32 md:w-48 md:h-48 object-cover rounded-xl shadow-lg transform -rotate-2 hover:rotate-0 transition-transform hidden sm:block">
+            </div>
+            <div class="mt-12">
+                <a href="#contato" class="inline-block px-10 py-4 bg-blue-500 hover:bg-blue-400 text-white rounded-full font-bold text-xl shadow-lg shadow-blue-500/30 transition-all hover:scale-105">
+                    Quero Agendar Minha Aula
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="py-20 bg-slate-50 relative">
+        <div class="container mx-auto px-6">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col lg:flex-row">
+                
+                <!-- Formulario -->
+                <div class="lg:w-1/2 p-8 md:p-12">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-2">Fale Conosco</h2>
+                    <p class="text-slate-600 mb-8">Preencha o formulário e nossa equipe entrará em contato rapidinho.</p>
+                    
+                    <form class="space-y-4" onsubmit="enviarWhatsApp(event)">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Nome</label>
+                            <input type="text" id="nome" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all" placeholder="Seu nome" required>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Preferencia de Horario</label>
+                                <select id="horario" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all">
+                                    <option>Manhã</option>
+                                    <option>Tarde</option>
+                                    <option>Noite</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Interesse</label>
+                                <select id="interesse" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all">
+                                    <option>Natação para adulto</option>
+                                    <option>Natação infantil</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-blue-600 text-white font-bold py-4 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2">
+                            Enviar no Whatsapp <i data-lucide="check-circle" class="w-5 h-5"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- maps -->
+                <div class="lg:w-1/2 bg-blue-900 text-white p-8 md:p-12 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Informações</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <i data-lucide="map-pin" class="text-blue-400 mt-1 w-6 h-6"></i>
+                                <div>
+                                    <p class="font-bold">Localização</p>
+                                    <p class="text-blue-100">Rua Áustria, 298 - Nações Unidas, Sabará - MG</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <i data-lucide="phone" class="text-blue-400 mt-1 w-6 h-6"></i>
+                                <div>
+                                    <p class="font-bold">Telefone</p>
+                                    <p class="text-blue-100">(31) 99244-5373</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <i data-lucide="clock" class="text-blue-400 mt-1 w-6 h-6"></i>
+                                <div>
+                                    <p class="font-bold">Horário de Atendimento</p>
+                                    <p class="text-blue-100">Seg e Qua: 19h às 21h</p>
+                                    <p class="text-blue-100">Ter e Qui: 08h às 21h</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 bg-blue-800 h-48 rounded-xl overflow-hidden shadow-lg border-2 border-blue-700/50 relative">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2646.405284058165!2d-43.864794665477284!3d-19.878987607254526!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa69dce7b9115ed%3A0x8b62491b0abbb432!2sAMB%20Atividades%20Aqu%C3%A1ticas!5e1!3m2!1spt-BR!2sbr!4v1765509781386!5m2!1spt-BR!2sbr" class="w-full h-full absolute inset-0" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="flex items-center gap-2 mb-4 md:mb-0">
+                    <img src="LOGOAMB.png" alt="Logo AMB" class="h-12 w-auto object-contain">
+                    <span class="text-xl font-bold text-white">
+                        AMB<span class="text-blue-500"> Atividades Aquáticas</span>
+                    </span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://www.instagram.com/amb_atividades_aquaticas/" target="_blank" class="hover:text-white transition-colors"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                    <a href="https://www.facebook.com/ambatividadesaquaticas/" target="_blank" class="hover:text-white transition-colors"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                </div>
+            </div>
+             <div class="border-t border-white/10 pt-8 flex flex-col justify-between items-left md:flex-row gap-4">
+                <p class="text-gray-300 text-sm text-left">
+                    &copy; 2025 AMB Atividades Aquáticas. Todos os direitos reservados.
+                </p>
+
+                <p class="text-gray-100 text-sm text-center md:text-right">
+                   Desenvolvido por 
+                 <a href="https://www.techdias.com" target="_blank" rel="noopener noreferrer" class="font-semibold text-gray-300 hover:underline hover:text-gray-100 transition-colors">Fernando Dias</a>
+                </p>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- bolinha whats -->
+    <a href="https://wa.me/5531992445373" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-transform hover:scale-110 z-50 flex items-center gap-2 group">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+        <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 whitespace-nowrap font-bold">
+            Quer mais informações?
+        </span>
+    </a>
+
+    <script>
+      
+        lucide.createIcons();
+
+        // 2. Menu Mobile
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.setAttribute('data-lucide', 'x');
+            } else {
+                menu.classList.add('hidden');
+                icon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons(); 
+        }
+
+        // 3. monta mensagem whats
+        function enviarWhatsApp(event) {
+            event.preventDefault();
+            
+            const nome = document.getElementById('nome').value;
+            const horario = document.getElementById('horario').value;
+            const interesse = document.getElementById('interesse').value;
+            const whatsappNumber = "5531992445373";
+
+            const text = `Olá tudo bem? Me chamo *${nome}*.\nTenho interesse em: *${interesse}*.\nMinha preferência de horário é: *${horario}*.\nGostaria de saber mais informações.`;
+            
+            window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        // 4. Animação de Fade In 
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        });
+
+        document.querySelectorAll('.fade-in-section').forEach((element) => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
